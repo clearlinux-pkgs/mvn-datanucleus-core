@@ -1,5 +1,5 @@
 PKG_NAME := mvn-datanucleus-core
 URL = https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
-ARCHIVES = https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.pom : 
+ARCHIVES = https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.pom :  https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.jar : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.pom :
 
 include ../common/Makefile.common

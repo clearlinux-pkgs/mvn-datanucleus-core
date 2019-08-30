@@ -4,15 +4,18 @@
 #
 Name     : mvn-datanucleus-core
 Version  : 3.2.10
-Release  : 1
+Release  : 2
 URL      : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
 Source0  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
 Source1  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar
 Source2  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.pom
+Source3  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.jar
+Source4  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: mvn-datanucleus-core-data = %{version}-%{release}
+Requires: mvn-datanucleus-core-license = %{version}-%{release}
 
 %description
 Core
@@ -28,19 +31,36 @@ Group: Data
 data components for the mvn-datanucleus-core package.
 
 
+%package license
+Summary: license components for the mvn-datanucleus-core package.
+Group: Default
+
+%description license
+license components for the mvn-datanucleus-core package.
+
+
 %prep
+%setup -q -n META-INF
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/mvn-datanucleus-core
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/mvn-datanucleus-core/LICENSE.txt
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10
-cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10
+cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.2
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.2
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.pom
 
 
 %files
@@ -51,3 +71,9 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/datanucleus/datanuc
 /usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
 /usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar
 /usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.pom
+/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.jar
+/usr/share/java/.m2/repository/org/datanucleus/datanucleus-core/3.2.2/datanucleus-core-3.2.2.pom
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/mvn-datanucleus-core/LICENSE.txt
