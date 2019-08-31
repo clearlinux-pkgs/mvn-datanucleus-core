@@ -4,7 +4,7 @@
 #
 Name     : mvn-datanucleus-core
 Version  : 3.2.10
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
 Source0  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10-sources.jar
 Source1  : https://repo1.maven.org/maven2/org/datanucleus/datanucleus-core/3.2.10/datanucleus-core-3.2.10.jar
